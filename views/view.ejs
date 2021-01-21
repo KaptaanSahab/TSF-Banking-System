@@ -1,0 +1,29 @@
+<%- include("partials/header") %>
+
+
+<h1 class="mainHeadings"> List of our Customers </h1>
+
+<div class="table">
+
+        <table class="table">
+            <tr>
+                <th class="boldify">Customer Name</th>
+                <th class="boldify">Email</th>
+                <th class="boldify">Credits</th>
+                <th class="boldify"></th>
+            </tr>
+            <% for(let user of users){ %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.email%></td>
+                    <td><%= user.credits%></td>
+
+                    <td><button class="btn btn-primary"><a href="/view/<%= user._id %>">Select</a></button></td>
+
+                </tr>
+            <% } %>
+        </table>
+</div>
+
+
+<%- include("partials/footer") %>

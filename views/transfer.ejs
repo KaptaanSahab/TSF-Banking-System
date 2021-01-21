@@ -1,0 +1,28 @@
+<%- include("partials/header") %>
+
+<h1 class="mainHeadings"> Transfer Credits  </h1>
+
+<div class="table">
+    <table class="table">
+        <tr>
+            <th class="boldify">Customer Name</th>
+            <th class="boldify">Email</th>
+            <th class="boldify">Credits</th>
+            <th class="boldify"></th>
+        </tr>
+    <% for(let current of users){ %>
+
+        <% if(!user._id.equals(current._id)){ %>
+            <tr>
+                <td><%= current.name %></td>
+                <td><%= current.email%></td>
+                <td><%= current.credits%></td>
+                <td><button class="btn btn-danger"><a href="/view/<%= user._id %>/<%= current._id %>">Transfer</a></button></td>
+            </tr>
+        <% } %>
+
+    <% } %>
+    </table>
+</div>
+
+<%- include("partials/footer") %>

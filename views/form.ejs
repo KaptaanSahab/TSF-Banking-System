@@ -1,0 +1,26 @@
+<%- include("partials/header") %>
+<div class="row formSpace">
+  <div class="col-6">
+    <h1 class="transferFrom">Credit Transfer from </h1><br>
+    <h4 class="detailsForm">Customer Name : <%= fromUser.name %></h4>
+    <h4 class="detailsForm">Balance : <%= fromUser.credits %></h4>
+  </div>
+  <div class="col-6">
+    <h1 class="transferTo">Credit Transfer to </h1><br>
+    <h4 class="detailsForm">Customer Name : <%= toUser.name %></h4>
+    <h4 class="detailsForm">Balance : <%= toUser.credits %></h4>
+  </div>
+</div>
+
+<div class="form spacingForm">
+    <form action="/view/<%= fromUser._id %>/<%= toUser._id %>?_method=PUT" method="POST">
+    <label class="labelSpecify" for="credits">Enter the number of credits to transfer</label>
+    <br>
+    <input type="number" id="credit" name="credit" placeholder="" value="">
+    <br>
+    <button class="btn btn-lg btn-outline-primary buttonAdd">Transfer</button>
+    </form>
+</div>
+
+
+<%- include("partials/footer") %>
